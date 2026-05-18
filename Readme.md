@@ -172,6 +172,11 @@ Application runs at:
 ```bash
 http://localhost:8000
 ```
+Live:
+
+```bash
+https://sentiment-analysis-4r1o.onrender.com/
+```
 
 ---
 
@@ -195,13 +200,16 @@ Workflow file:
 # 📸 Screenshots
 
 ## Frontend UI
-(Add screenshot here)
+<img width="1003" height="955" alt="image" src="https://github.com/user-attachments/assets/0eab8755-e470-488c-bd47-fd54da92760a" />
+
 
 ## Docker Running
-(Add Docker Desktop screenshot here)
+<img width="1577" height="917" alt="image" src="https://github.com/user-attachments/assets/78c30ace-668a-4c7a-9767-e20b1fe4ece6" />
+
 
 ## GitHub Actions CI/CD
-(Add GitHub Actions screenshot here)
+<img width="1912" height="922" alt="image" src="https://github.com/user-attachments/assets/e7317a25-6103-4fa4-a6dd-3457a91823be" />
+
 
 ---
 
