@@ -1,122 +1,234 @@
-# 🎬 CineRead — AI Sentiment Analysis for Movie Reviews
+# 🎬 CineRead – NLP Sentiment Analysis DevOps Project
 
-CineRead is a full-stack AI-powered web application that analyzes the sentiment of movie reviews using Machine Learning.
-It predicts whether a review is **Positive 😊** or **Negative 😡**, along with confidence scores.
+## 📌 Project Overview
 
----
+CineRead is an AI-powered NLP Sentiment Analysis web application that predicts whether a movie review is **Positive 😊** or **Negative 😡** using Machine Learning and Natural Language Processing techniques.
 
-## 🚀 Live Demo
+The project was built using:
+- Flask REST API
+- Scikit-learn NLP pipeline
+- Docker containerization
+- GitHub Actions CI/CD
+- Frontend + Backend integration
 
-👉 https://nlp-one-gilt.vercel.app/
-
----
-
-## 📌 Features
-
-* 🧠 Machine Learning model (Random Forest)
-* 🎯 Real-time sentiment prediction
-* 📊 Confidence score + probability breakdown
-* 🌐 Flask backend API
-* 🎨 Beautiful animated frontend (HTML, CSS, JS)
-* 🔗 Full frontend ↔ backend integration
+This project demonstrates the complete lifecycle of an AI application including:
+- Model training
+- API development
+- Frontend integration
+- Dockerized deployment
+- CI/CD automation
 
 ---
 
-## 🏗️ Project Structure
+# 🚀 Features
 
-```id="a1"
+✅ NLP-based sentiment prediction  
+✅ Flask REST API  
+✅ Interactive frontend UI  
+✅ Dockerized application  
+✅ Docker Compose setup  
+✅ GitHub Actions CI/CD pipeline  
+✅ Health check endpoint  
+✅ Prediction confidence score  
+✅ CORS-enabled API  
+✅ DevOps-ready structure  
+
+---
+
+# 🛠️ Tech Stack
+
+## Machine Learning & NLP
+- Python
+- Scikit-learn
+- CountVectorizer
+- Random Forest Classifier
+- Pandas
+- NumPy
+- NLTK
+- Gensim
+
+## Backend
+- Flask
+- REST API
+
+## Frontend
+- HTML
+- CSS
+- JavaScript
+
+## DevOps
+- Docker
+- Docker Compose
+- GitHub Actions (CI/CD)
+
+---
+
+# 📂 Project Structure
+
+```bash
 SENTIMENT_ANALYSIS/
 │
+├── .github/
+│   └── workflows/
+│       └── main.yml
+│
 ├── backend/
-│   ├── main.py              # Flask API
-│   ├── rf_model.pkl         # Trained ML model
-│   ├── cv.pkl               # CountVectorizer
-│   ├── IMDB Dataset.csv     # Dataset
-│   └── NLP_Sentiment_Analysis.ipynb
+│   ├── templates/
+│   │   └── index.html
+│   │
+│   ├── app.py
+│   ├── cv.pkl
+│   └── rf_model.pkl
 │
-├── frontend/
-│   └── index.html           # UI
-│
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── .gitignore
+├── .dockerignore
 └── README.md
 ```
 
 ---
 
-## ⚙️ Tech Stack
+# 🧠 Machine Learning Workflow
 
-### 🔹 Backend
+The model was trained using:
 
-* Python
-* Flask
-* scikit-learn
-* joblib
+1. Data Cleaning  
+2. HTML Tag Removal  
+3. Lowercase Conversion  
+4. Stopword Removal  
+5. Count Vectorization  
+6. Random Forest Classification  
+7. Model Serialization using Joblib  
 
-### 🔹 Frontend
-
-* HTML5
-* CSS3 (Advanced UI + Animations)
-* JavaScript (Fetch API)
-
----
-
-## 🧠 Model Details
-
-* Algorithm: **Random Forest Classifier**
-* Vectorization: **CountVectorizer**
-* Dataset: **IMDB Movie Reviews**
-* Output:
-
-  * Sentiment (Positive / Negative)
-  * Confidence Score
-  * Probability distribution
+Additional NLP experiments:
+- TF-IDF
+- Word2Vec
+- Gaussian Naive Bayes
 
 ---
 
-## 📡 API Endpoint
+# ⚙️ API Endpoints
 
-### 🔹 POST `/predict`
+## Home Route
 
-#### Request:
+```http
+GET /
+```
 
-```json id="a2"
+Returns API status.
+
+---
+
+## Health Check
+
+```http
+GET /health
+```
+
+Returns application health status.
+
+---
+
+## Predict Sentiment
+
+```http
+POST /predict
+```
+
+### Request Body
+
+```json
 {
-  "text": "This movie is amazing!"
+  "text": "This movie was absolutely amazing!"
 }
 ```
 
-#### Response:
+### Response
 
-```json id="a3"
+```json
 {
+  "input": "This movie was absolutely amazing!",
   "sentiment": "Positive 😊",
-  "score": 0.95,
-  "positive_probability": 0.95,
-  "negative_probability": 0.05
+  "score": 0.9821,
+  "positive_probability": 0.9821,
+  "negative_probability": 0.0179
 }
 ```
 
 ---
 
-## ⚠️ Important Notes
+# 🐳 Docker Setup
 
-* Backend must be running for API requests
-* Do NOT open frontend using `file://`
-* Use a local server (`python -m http.server`) for development
-* Ensure CORS is properly configured
+## Build and Run Using Docker Compose
 
----
----
+```bash
+docker compose up --build
+```
 
-## 🚀 Future Improvements
+Application runs at:
 
-* 🌐 Deploy backend (Render / Railway)
-* ⚛️ Convert frontend to React
-* 📄 Add Swagger API docs
-* 🤖 Upgrade model (Deep Learning / NLP transformers)
+```bash
+http://localhost:8000
+```
 
 ---
 
+# 🔄 CI/CD Pipeline
+
+GitHub Actions automatically:
+
+- Installs dependencies
+- Verifies Flask app
+- Tests Docker build
+- Validates project on every push
+
+Workflow file:
+
+```bash
+.github/workflows/main.yml
+```
 
 ---
 
-⭐ If you like this project, give it a star on GitHub!
+# 📸 Screenshots
+
+## Frontend UI
+(Add screenshot here)
+
+## Docker Running
+(Add Docker Desktop screenshot here)
+
+## GitHub Actions CI/CD
+(Add GitHub Actions screenshot here)
+
+---
+
+# 🌐 Future Improvements
+
+- Deploy on Render/AWS
+- Add Swagger API Documentation
+- Add User Authentication
+- Add Database Integration
+- Add Kubernetes Deployment
+- Add Monitoring & Logging
+
+---
+
+# 👩‍💻 Author
+
+Kriti Kumari
+
+GitHub:
+https://github.com/Kriti-kumari221
+
+---
+
+# ⭐ Project Highlights
+
+✅ AI + DevOps Integrated Project  
+✅ End-to-End ML Deployment  
+✅ Containerized Flask Application  
+✅ CI/CD Automation with GitHub Actions  
+✅ Production-Ready Project Structure
