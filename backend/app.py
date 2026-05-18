@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, make_response
 import joblib
 import os
+from flask import render_template
 
 # ── Paths ────────────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -14,11 +15,7 @@ app = Flask(__name__)
 # ── Home route (optional but nice for testing) ───────────
 @app.route("/")
 def home():
-    return jsonify({
-        "message": "🎬 CineRead API is running 🚀",
-        "endpoint": "/predict (POST)",
-        "status": "OK"
-    })
+    return render_template("index.html")
 
 # ── Health check ─────────────────────────────────────────
 @app.route("/health")
