@@ -215,7 +215,6 @@ Workflow file:
 
 # 🌐 Future Improvements
 
-- Deploy on Render/AWS
 - Add Swagger API Documentation
 - Add User Authentication
 - Add Database Integration
